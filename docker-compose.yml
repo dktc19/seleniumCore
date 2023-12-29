@@ -1,0 +1,56 @@
+  # To execute this docker-compose yml file use `docker-compose -f <file_name> up`
+  # Add the `-d` flag at the end for detached execution
+  version: "3"
+  services:
+    selenium-hub:
+      image: selenium/hub:latest
+      container_name: selenium-hub
+      ports:
+        - "4442:4442"
+        - "4443:4443"
+        - "4444:4444"
+      environment:
+        - SE_SESSION_REQUEST_TIMEOUT=7200
+
+    chrome:
+      image: selenium/node-chrome:latest
+      volumes:
+        - /dev/shm:/dev/shm
+      shm_size: "2g"
+      depends_on:
+        - selenium-hub
+      environment:
+        - SE_EVENT_BUS_HOST=selenium-hub
+        - SE_EVENT_BUS_PUBLISH_PORT=4442
+        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+    firefox:
+      image: selenium/node-firefox:latest
+      volumes:
+        - /dev/shm:/dev/shm
+      shm_size: "2g"
+      depends_on:
+        - selenium-hub
+      environment:
+        - SE_EVENT_BUS_HOST=selenium-hub
+        - SE_EVENT_BUS_PUBLISH_PORT=4442
+        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+        - SE_NODE_MAX_SESSIONS=2
+
+#    jenkins:
+#      image: jenkins/jenkins:latest-jdk8
+#      privileged: true
+#      user: root
+#      ports:
+#        - 8091:8080
+#        - 50000:50000
+#      container_name: jenkins
+#      environment:
+#        - JENKINS_ADMIN_ID=admin
+#        - JENKINS_ADMIN_PASSWORD=123456
+#        - JAVA_TOOL_OPTIONS=-Dhttp.proxyHost=proxy.hcm.fpt.vn -Dhttp.proxyPort=80 -Dhttps.proxyHost=proxy.hcm.fpt.vn -Dhttps.proxyPort=80 -Dhttp.nonProxyHosts=seleniumhub.fpt.net
+#      volumes:
+#        - shared_data:/var/jenkins_home
+#        - shared_data:/var/runselenium-hub
+#  volumes:
+#    shared_data:

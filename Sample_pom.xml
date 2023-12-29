@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>groupId</groupId>
+    <artifactId>Desktop</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <!-- Configurable variables -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <screenshotDirectory>${project.build.directory}\screenshots</screenshotDirectory>
+
+        <!-- Dependency versions -->
+        <java.version>1.8</java.version>
+        <selenium.version>3.12.0</selenium.version>
+        <!--        <selenium.version>4.1.1</selenium.version>-->
+        <testng.version>7.3.0</testng.version>
+
+        <!-- Plugin versions -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
+
+        <!-- Configurable browser -->
+        <threads>1</threads>
+        <browser>firefox</browser>
+        <!--        <browser>chrome</browser>-->
+        <platform/>
+        <browserVersion/>
+        <headless>false</headless>
+
+        <!-- Configurable Grid -->
+        <gridEnabled>false</gridEnabled>
+        <gridURL>http://seleniumhub.fpt.net</gridURL>
+        <!--        <gridURL>http://localhost:4444</seleniumGridURL>-->
+
+        <!-- Configurable Proxy -->
+        <proxyEnabled>True</proxyEnabled>
+        <proxyHost>proxy.hcm.fpt.vn</proxyHost>
+        <proxyPort>80</proxyPort>
+
+        <!-- Configurable Test Case -->
+        <suiteXmlFile>TestNG_Case.xml</suiteXmlFile>
+
+        <!-- Configurable Email -->
+        <enableEmailReport>true</enableEmailReport>
+        <toEmailReport>minhlh5@fpt.com.vn</toEmailReport>
+        <toCCReport></toCCReport>
+        <toBCCReport></toBCCReport>
+        <subjectEmailReport> [DKOL]: test 1</subjectEmailReport>
+
+        <!-- Configurable Upload File -->
+        <enableUploadFile>true</enableUploadFile>
+
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>Runtest</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                        <version>${maven-compiler-plugin.version}</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <skipTests>true</skipTests>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>${maven-failsafe-plugin.version}</version>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                            </suiteXmlFiles>
+                            <parallel>methods</parallel>
+                            <threadCount>${threads}</threadCount>
+                            <systemPropertyVariables>
+                                <screenshotDirectory>${screenshotDirectory}</screenshotDirectory>
+                                <!--Properties selenium Grid-->
+                                <gridEnabled>${gridEnabled}</gridEnabled>
+                                <gridURL>${gridURL}</gridURL>
+                                <desiredPlatform>${platform}</desiredPlatform>
+                                <browser>${browser}</browser>
+                                <headless>${headless}</headless>
+                                <desiredBrowserVersion>
+                                    ${browserVersion}
+                                </desiredBrowserVersion>
+                                <!-- Configurable Proxy -->
+                                <proxyEnabled>${proxyEnabled}</proxyEnabled>
+                                <proxyHost>${proxyHost}</proxyHost>
+                                <proxyPort>${proxyPort}</proxyPort>
+                                <!-- Configurable Email -->
+                                <enableEmailReport>${enableEmailReport}</enableEmailReport>
+                                <toEmailReport>${toEmailReport}</toEmailReport>
+                                <toCCReport>${toCCReport}</toCCReport>
+                                <toBCCReport>${toBCCReport}</toBCCReport>
+                                <subjectEmailReport>${subjectEmailReport}</subjectEmailReport>
+                                <!-- Configurable Upload File -->
+                                <enableUploadFile>${enableUploadFile}</enableUploadFile>
+                            </systemPropertyVariables>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                    <version>${selenium.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                    <version>${selenium.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>io.rest-assured</groupId>
+                    <artifactId>rest-assured</artifactId>
+                    <version>4.4.0</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                    <version>${testng.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.lazerycode.selenium</groupId>
+                    <artifactId>query</artifactId>
+                    <version>2.0.0-BETA3</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.assertj</groupId>
+                    <artifactId>assertj-core</artifactId>
+                    <!-- use 2.9.1 for Java 7 projects -->
+                    <version>3.16.1</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                    <version>1.7.5</version>
+                </dependency>
+                <dependency>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                    <version>1.2.11</version>
+                </dependency>
+                <dependency>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                    <version>1.2.11</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi</artifactId>
+                    <version>4.0.1</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi-ooxml</artifactId>
+                    <version>4.0.1</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.googlecode.json-simple</groupId>
+                    <artifactId>json-simple</artifactId>
+                    <version>1.1.1</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.glassfish</groupId>
+                    <artifactId>javax.json</artifactId>
+                    <version>1.1.2</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.aventstack</groupId>
+                    <artifactId>extentreports</artifactId>
+                    <version>3.1.5</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.sun.mail</groupId>
+                    <artifactId>javax.mail</artifactId>
+                    <version>1.6.2</version>
+                </dependency>
+                <dependency>
+                    <groupId>io.github.bonigarcia</groupId>
+                    <artifactId>webdrivermanager</artifactId>
+                    <version>5.1.0</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.konghq</groupId>
+                    <artifactId>unirest-java</artifactId>
+                    <version>3.13.6</version>
+                </dependency>
+                <dependency>
+                    <groupId>ru.yandex.qatools.ashot</groupId>
+                    <artifactId>ashot</artifactId>
+                    <version>1.5.4</version>
+                </dependency>
+                <dependency>
+                    <groupId>io.minio</groupId>
+                    <artifactId>minio</artifactId>
+                    <version>7.0.2</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+</project>

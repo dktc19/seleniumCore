@@ -1,0 +1,74 @@
+  {
+	"URL_TEST": "http://v5-2.shop-stag.fpt.vn",
+    "URL_TEST_MA_GIOI_THIEU_BAN_BE": "http://v5-2.shop-stag.fpt.vn/shop?ref=",
+    "MA_GTBB": "FTELX97E6",
+    "MAN_HINH_TTDK":[
+      "Thông tin cá nhân",
+      "Địa chỉ lắp đặt",
+      "Tiếp tục",
+      "Thông tin đăng ký",
+      "Chọn dịch vụ",
+      "Thông tin thanh toán",
+      "Hoàn tất đăng ký"
+    ],
+    "URL_DKINTERNET": "http://v5-2.shop-stag.fpt.vn/internet/register",
+    "URL_CHON_DICH_VU": "http://v5-2.shop-stag.fpt.vn/internet/service",
+    "URL_PAYMENT": "http://v5-2.shop-stag.fpt.vn/internet/payment",
+    "LIST_TEXT_TTCN": [
+      "HỌ VÀ TÊN *",
+      "SỐ ĐIỆN THOẠI *",
+      "NGÀY SINH *",
+      "SỐ CMND/CCCD *",
+      "GIỚI TÍNH",
+      "ĐỊA CHỈ EMAIL"
+    ],
+
+    "ERROR_SAIDINHDANG":"Số điện thoại của bạn không đúng định dạng!",
+
+    "ERROR_TRUNGKHTN24H": "Số điện thoại của Quý Khách đã được sử dụng để đăng ký dịch vụ của FPT Telecom thời gian gần đây. Vui lòng quay lại sau 24 tiếng hoặc đăng ký qua tổng đài 19006600",
+    "THONGBAO_KIEMTRA_HATANG":  [
+      "Hệ thống chưa xác định được địa chỉ lắp đặt của Quý khách có hạ tầng hay không. Sẽ có nhân viên FPT Telecom khu vực gọi lại trong vòng 5 phút. Xin cảm ơn!",
+      "Hệ thống chưa xác định được địa chỉ lắp đặt của Quý khách có hạ tầng hay không. Sẽ có nhân viên FPT Telecom khu vực gọi lại vào lúc 8h-10h sáng. Xin cảm ơn!"
+      ],
+    "THONGBAO_THUEBAONOCUOC": "Thông tin Quý khách đăng ký thuộc hợp đồng SGH552808 chưa hoàn tất thủ tục thanh toán cước trước đó. Vui lòng liên hệ tổng đài 1900 6600 để được hỗ trợ. Xin cảm ơn!",
+    "LIST_TEXT_TTTT": [
+      "Hoàn tất đăng ký",
+      "Chọn phương thức thanh toán",
+      "Chi tiết đơn hàng",
+      "điều khoản của FPT Telecom.",
+      "Bằng việc ấn vào nút Thanh toán bạn đã đồng ý với các",
+      "DKOL50K"
+    ],
+    "LISTTEXTPOPUPTTTT": [
+      "Hình thức thanh toán",
+      "Giảm 50.000đ khi thanh toán qua thẻ quốc tế, thẻ ATM, MoMo, VNPay, Foxpay",
+      "Thẻ quốc tế",
+      "Thẻ ATM",
+      "Ví điện tử Foxpay",
+      "Ví điện tử Momo",
+      "Ví điện tử VNPay",
+      "Thanh toán tại nhà"
+    ],
+    "URL_QR": "http://v5-2.shop-stag.fpt.vn/internet/qrpayment",
+    "URLTTTN": "http://v5-2.shop-stag.fpt.vn/internet/finish",
+    "URLTTQUOCTEATM": "https://portal-staging.foxpay.vn/payment/checkout",
+    "LISTTTCTDH": [
+      "Combo super 80 (14 tháng)",
+      "F-Safe (2 tháng)",
+      "Voucher",
+      "Tổng tiền",
+      "3.660.000đ",
+      "360.000đ",
+      "-50.000đ",
+      "3.970.000đ"
+    ],
+    "NOI_DUNG_XAC_NHAN_HUY_VOUCHER": "Quý khách chắc chắn muốn hủy voucher?",
+    "MESSAGE_VOUCHER_KHONG_HOP_LE_PART1": "Áp dụng mã ",
+    "MESSAGE_VOUCHER_KHONG_HOP_LE_PART2": " thất bại. Vui lòng kiểm tra lại mã voucher/mã giới thiệu của quý khách.",
+    "TEXTQT": "Có thể bạn quan tâm",
+    "URLDVQT": "http://v5-2.shop-stag.fpt.vn/cloud?categoryType=7&localType=190",
+    "NOI_DUNG_XAC_NHAN_HUY_VOUCHER": "Quý khách chắc chắn muốn hủy voucher?",
+    "MESSAGE_VOUCHER_KHONG_HOP_LE_PART1": "Áp dụng mã ",
+    "MESSAGE_VOUCHER_KHONG_HOP_LE_PART2": " thất bại. Vui lòng kiểm tra lại mã voucher/mã giới thiệu của quý khách."
+
+  }

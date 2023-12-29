@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+<!--   <listeners>
+        <listener class-name="net.fpt.listeners.LogTestNGListener" />
+    </listeners>-->
+   <test name="Chọn gói dịch vụ">
+       <groups>
+           <run>
+               <include name="landing" />
+           </run>
+       </groups>
+          <classes>
+                   <class name="test_cases.InternetTruyenHinh"/>
+<!--                   <methods>
+                       <include name="TC_2_27"/>
+
+
+                   </methods>-->
+
+<!--                  <class name="test_cases.InternetTruyenHinh"/>-->
+<!--                  <methods>-->
+<!--                      <include name="Feature_2"/>-->
+<!--                  </methods>-->
+          </classes>
+
+<!--          <classes>
+                <class name="test_cases.InternetTruyenHinh"/>
+                <methods>
+                    <include name="TC_1"/>
+                </methods>
+            </classes>-->
+    </test>
+
+<!--    <test name="truyền hình">
+
+
+        <classes>
+            <class name="test_cases.InternetTruyenHinh"/>
+            <methods>
+                <include name="TC_1"/>
+            </methods>
+        </classes>
+    </test>-->
+</suite>
+
+

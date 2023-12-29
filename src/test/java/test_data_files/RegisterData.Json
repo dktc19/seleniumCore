@@ -1,0 +1,16 @@
+{
+  "LIST_ERROR_DKDV": [
+    "Vui lòng nhập họ và tên.",
+    "Vui lòng nhập số điện thoại.",
+    "Ngày sinh không đúng định dạng",
+    "Vui lòng nhập số CMND/CCCD.",
+    "Vui lòng chọn phường/xã.",
+    "Vui lòng chọn đường/phố.",
+    "Vui lòng nhập địa chỉ/số nhà."
+  ],
+  "ERROR_NULL_NAME": "Vui lòng nhập họ và tên.",
+  "ERROR_NULL_PHONE": "Vui lòng nhập số điện thoại.",
+  "ERROR_BIRTHDAY": "Ngày sinh không đúng định dạng",
+  "ERROR_ID": "Vui lòng nhập số CMND/CCCD.",
+  "ERROR_STREET": "Vui lòng chọn đường/phố."
+}
