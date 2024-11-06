@@ -1,0 +1,4 @@
+{
+  "remoteUrl": "http://seleniumhub.fpt.net/wd/hub",
+  "proxy": "proxy.hcm.fpt.vn:80"
+}
